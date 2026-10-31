@@ -220,9 +220,9 @@ export const ProfileModal: React.FC<ProfileModalProps> = ({ isOpen, onClose }) =
             </button>
             <button
               type="submit"
-              className="px-5 py-2 text-xs font-bold text-white dark:text-[#171A18] bg-[#96BD9D] hover:bg-[#83AA8A] dark:bg-[#A8C9AE] rounded-xl flex items-center gap-1.5 transition-colors shadow-xs"
+              className="px-5 py-2 text-xs font-bold text-white bg-[#527D5D] hover:bg-[#43674D] dark:bg-[#8DBA98] dark:text-[#171A18] dark:hover:bg-[#7ba886] rounded-xl flex items-center gap-1.5 transition-colors shadow-xs cursor-pointer"
             >
-              <Save className="w-3.5 h-3.5" />
+              <Save className="w-3.5 h-3.5" strokeWidth={2.2} />
               <span>Save Changes</span>
             </button>
           </div>

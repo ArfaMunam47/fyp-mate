@@ -276,9 +276,9 @@ Whether you need guidance designing database schemas, architecting RESTful contr
         <button
           type="submit"
           disabled={!input.trim() || isLoading}
-          className="p-2.5 text-xs font-bold text-white dark:text-[#171A18] bg-[#96BD9D] hover:bg-[#83AA8A] dark:bg-[#A8C9AE] disabled:opacity-40 rounded-2xl transition-colors shrink-0 shadow-xs"
+          className="p-2.5 text-xs font-bold text-white bg-[#527D5D] hover:bg-[#43674D] dark:bg-[#8DBA98] dark:text-[#171A18] dark:hover:bg-[#7ba886] disabled:opacity-40 rounded-2xl transition-colors shrink-0 shadow-xs cursor-pointer"
         >
-          <Send className="w-4 h-4" />
+          <Send className="w-4 h-4" strokeWidth={2.2} />
         </button>
       </form>
     </div>

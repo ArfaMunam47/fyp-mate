@@ -31,7 +31,7 @@ export const Sidebar: React.FC = () => {
       id: 'dashboard', 
       label: 'Dashboard', 
       icon: LayoutDashboard,
-      accentColor: 'text-[#55825D] dark:text-[#A8C9AE]',
+      accentColor: 'text-[#527D5D] dark:text-[#8DBA98]',
       activeBg: 'bg-[#EEF5EF] dark:bg-[#202E24] text-[#292D2B] dark:text-white font-bold'
     },
     { 
@@ -39,21 +39,21 @@ export const Sidebar: React.FC = () => {
       label: 'FYP Academy', 
       icon: GraduationCap, 
       badge: `${completedChapters.length}/12`,
-      accentColor: 'text-[#4A8DAF] dark:text-[#9FD0E6]',
+      accentColor: 'text-[#3E7796] dark:text-[#A9D4E8]',
       activeBg: 'bg-[#EDF6FA] dark:bg-[#1C2C35] text-[#292D2B] dark:text-white font-bold'
     },
     { 
       id: 'ideas', 
       label: 'Idea Discovery', 
       icon: Lightbulb,
-      accentColor: 'text-[#B88C22] dark:text-[#E9C76A]',
+      accentColor: 'text-[#946E1E] dark:text-[#E9C76A]',
       activeBg: 'bg-[#FAF4E4] dark:bg-[#332C1A] text-[#292D2B] dark:text-white font-bold'
     },
     { 
       id: 'feasibility', 
       label: 'Feasibility Doctor', 
       icon: Scale,
-      accentColor: 'text-[#55825D] dark:text-[#A8C9AE]',
+      accentColor: 'text-[#527D5D] dark:text-[#8DBA98]',
       activeBg: 'bg-[#EEF5EF] dark:bg-[#202E24] text-[#292D2B] dark:text-white font-bold'
     },
     { 
@@ -61,35 +61,35 @@ export const Sidebar: React.FC = () => {
       label: 'Project Workspace', 
       icon: KanbanSquare,
       badge: `${project.tasks.filter(t => t.status === 'done').length}/${project.tasks.length}`,
-      accentColor: 'text-[#55825D] dark:text-[#A8C9AE]',
+      accentColor: 'text-[#527D5D] dark:text-[#8DBA98]',
       activeBg: 'bg-[#EEF5EF] dark:bg-[#202E24] text-[#292D2B] dark:text-white font-bold'
     },
     { 
       id: 'documentation', 
       label: 'Documentation Studio', 
       icon: FileEdit,
-      accentColor: 'text-[#4A8DAF] dark:text-[#9FD0E6]',
+      accentColor: 'text-[#3E7796] dark:text-[#A9D4E8]',
       activeBg: 'bg-[#EDF6FA] dark:bg-[#1C2C35] text-[#292D2B] dark:text-white font-bold'
     },
     { 
       id: 'mentor', 
       label: 'AI Project Mentor', 
       icon: Bot,
-      accentColor: 'text-[#55825D] dark:text-[#A8C9AE]',
+      accentColor: 'text-[#527D5D] dark:text-[#8DBA98]',
       activeBg: 'bg-[#EEF5EF] dark:bg-[#202E24] text-[#292D2B] dark:text-white font-bold'
     },
     { 
       id: 'presentation', 
       label: 'Presentation Deck', 
       icon: Presentation,
-      accentColor: 'text-[#BD6C7B] dark:text-[#EBC3CC]',
+      accentColor: 'text-[#9E4B60] dark:text-[#EBC3CC]',
       activeBg: 'bg-[#F9EDF0] dark:bg-[#332226] text-[#292D2B] dark:text-white font-bold'
     },
     { 
       id: 'defense', 
       label: 'Viva Voce Simulator', 
       icon: Award,
-      accentColor: 'text-[#BD6C7B] dark:text-[#EBC3CC]',
+      accentColor: 'text-[#9E4B60] dark:text-[#EBC3CC]',
       activeBg: 'bg-[#F9EDF0] dark:bg-[#332226] text-[#292D2B] dark:text-white font-bold'
     },
   ];

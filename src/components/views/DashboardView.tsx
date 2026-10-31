@@ -31,48 +31,73 @@ export const DashboardView: React.FC = () => {
 
   return (
     <div className="space-y-6 max-w-6xl mx-auto">
+      {/* Incomplete profile setup reminder banner */}
+      {!profile.university && (
+        <div className="p-4 rounded-2xl bg-[#EEF5EF] dark:bg-[#202E24] border border-[#8DBA98]/40 flex flex-col sm:flex-row sm:items-center justify-between gap-3 text-xs">
+          <div className="flex items-center gap-3">
+            <div className="w-8 h-8 rounded-xl bg-white dark:bg-[#272C29] text-[#527D5D] dark:text-[#8DBA98] flex items-center justify-center shrink-0 border border-[#8DBA98]/30">
+              <GraduationCap className="w-4 h-4" strokeWidth={2.2} />
+            </div>
+            <div>
+              <span className="font-bold text-[#292D2B] dark:text-white block">
+                Complete your student academic profile
+              </span>
+              <span className="text-[#6B7269] dark:text-[#9DA39B]">
+                Specify your university and degree to auto-fill IEEE document headers and viva panel evaluations.
+              </span>
+            </div>
+          </div>
+          <button
+            onClick={() => setActiveTab('workspace')}
+            className="px-3.5 py-1.5 text-xs font-bold text-white bg-[#527D5D] hover:bg-[#43674D] rounded-xl shrink-0 cursor-pointer"
+          >
+            Go to Workspace
+          </button>
+        </div>
+      )}
+
       {/* Hero Welcome Banner (Clean pastel card) */}
       <div className="relative overflow-hidden rounded-3xl border border-[#292D2B]/8 dark:border-white/8 bg-white dark:bg-[#202422] shadow-xs">
         <div className="grid grid-cols-1 lg:grid-cols-12 items-stretch">
           <div className="p-6 md:p-8 lg:col-span-7 flex flex-col justify-between">
             <div>
-              <div className="flex items-center gap-2 text-xs font-semibold text-[#55825D] dark:text-[#A8C9AE] mb-2">
+              <div className="flex items-center gap-2 text-xs font-semibold text-[#527D5D] dark:text-[#8DBA98] mb-2">
                 <span>{profile.name ? `Welcome back, ${profile.name}` : 'Welcome to FYP Mate'}</span>
                 {profile.degree && (
                   <>
                     <span aria-hidden="true">·</span>
-                    <span className="text-[#858982] dark:text-[#9DA39B]">{profile.degree}</span>
+                    <span className="text-[#6B7269] dark:text-[#9DA39B]">{profile.degree}</span>
                   </>
                 )}
               </div>
               <h1 className="text-2xl md:text-3xl font-extrabold text-[#292D2B] dark:text-white tracking-tight text-balance leading-tight">
                 Your Final Year Project, Organized & Simplified.
               </h1>
-              <p className="mt-2.5 text-xs md:text-sm text-[#858982] dark:text-[#9DA39B] leading-relaxed max-w-xl">
-                Currently tracking <span className="font-semibold text-[#292D2B] dark:text-white">"{project.title}"</span> in phase <span className="font-semibold text-[#55825D] dark:text-[#A8C9AE]">{project.currentPhase}</span>. Maintain your IEEE documentation, sprint tasks, and defense readiness synchronized.
+              <p className="mt-2.5 text-xs md:text-sm text-[#6B7269] dark:text-[#9DA39B] leading-relaxed max-w-xl">
+                Currently tracking <span className="font-semibold text-[#292D2B] dark:text-white">"{project.title}"</span> in phase <span className="font-semibold text-[#527D5D] dark:text-[#8DBA98]">{project.currentPhase}</span>. Maintain your IEEE documentation, sprint tasks, and defense readiness synchronized.
               </p>
             </div>
 
             <div className="mt-6 flex flex-wrap items-center gap-2.5">
               <button
                 onClick={() => setActiveTab('workspace')}
-                className="px-4 py-2 text-xs font-bold text-white dark:text-[#171A18] bg-[#96BD9D] hover:bg-[#83AA8A] dark:bg-[#A8C9AE] dark:hover:bg-[#97BCA0] rounded-xl shadow-xs transition-colors whitespace-nowrap flex items-center gap-2"
+                className="px-4 py-2 text-xs font-bold text-white bg-[#527D5D] hover:bg-[#43674D] dark:bg-[#8DBA98] dark:text-[#171A18] dark:hover:bg-[#7ba886] rounded-xl shadow-xs transition-colors whitespace-nowrap flex items-center gap-2 cursor-pointer"
               >
                 <span>Open Project Workspace</span>
-                <ArrowRight className="w-3.5 h-3.5" />
+                <ArrowRight className="w-3.5 h-3.5" strokeWidth={2.2} />
               </button>
               <button
                 onClick={() => setActiveTab('documentation')}
-                className="px-4 py-2 text-xs font-semibold text-[#292D2B] dark:text-white bg-[#FAF9F5] hover:bg-[#EEF5EF] dark:bg-[#272C29] dark:hover:bg-[#202E24] border border-[#292D2B]/8 dark:border-white/8 rounded-xl transition-colors whitespace-nowrap flex items-center gap-2"
+                className="px-4 py-2 text-xs font-semibold text-[#292D2B] dark:text-white bg-[#FAF9F5] hover:bg-[#EEF5EF] dark:bg-[#272C29] dark:hover:bg-[#202E24] border border-[#292D2B]/8 dark:border-white/8 rounded-xl transition-colors whitespace-nowrap flex items-center gap-2 cursor-pointer"
               >
-                <FileText className="w-3.5 h-3.5 text-[#4A8DAF] dark:text-[#9FD0E6]" />
+                <FileText className="w-3.5 h-3.5 text-[#3E7796] dark:text-[#A9D4E8]" strokeWidth={2} />
                 <span>Resume Documentation</span>
               </button>
               <button
                 onClick={() => setActiveTab('defense')}
-                className="px-4 py-2 text-xs font-semibold text-[#292D2B] dark:text-white bg-[#FAF9F5] hover:bg-[#FAF4E4] dark:bg-[#272C29] dark:hover:bg-[#332C1A] border border-[#292D2B]/8 dark:border-white/8 rounded-xl transition-colors whitespace-nowrap flex items-center gap-2"
+                className="px-4 py-2 text-xs font-semibold text-[#292D2B] dark:text-white bg-[#FAF9F5] hover:bg-[#FAF4E4] dark:bg-[#272C29] dark:hover:bg-[#332C1A] border border-[#292D2B]/8 dark:border-white/8 rounded-xl transition-colors whitespace-nowrap flex items-center gap-2 cursor-pointer"
               >
-                <Award className="w-3.5 h-3.5 text-[#B88C22] dark:text-[#E9C76A]" />
+                <Award className="w-3.5 h-3.5 text-[#946E1E] dark:text-[#E9C76A]" strokeWidth={2} />
                 <span>Practice Viva Voce</span>
               </button>
             </div>

@@ -2,6 +2,8 @@ import React, { useState } from 'react';
 import { AppProvider, useApp } from './context/AppContext';
 import { Navbar } from './components/Navbar';
 import { Sidebar } from './components/Sidebar';
+import { LandingView } from './components/views/LandingView';
+import { AuthView } from './components/views/AuthView';
 import { DashboardView } from './components/views/DashboardView';
 import { AcademyView } from './components/views/AcademyView';
 import { IdeaDiscoveryView } from './components/views/IdeaDiscoveryView';
@@ -11,7 +13,6 @@ import { DocStudioView } from './components/views/DocStudioView';
 import { MentorView } from './components/views/MentorView';
 import { PresentationView } from './components/views/PresentationView';
 import { DefenseSimulatorView } from './components/views/DefenseSimulatorView';
-import { AuthView } from './components/views/AuthView';
 import { ProfileModal } from './components/ProfileModal';
 import { 
   LayoutDashboard, 
@@ -26,9 +27,24 @@ import { ActiveNavTab } from './types';
 const MainLayout: React.FC = () => {
   const { activeTab, setActiveTab, isAuthenticated } = useApp();
   const [isProfileModalOpen, setIsProfileModalOpen] = useState(false);
+  const [authModalMode, setAuthModalMode] = useState<'signin' | 'signup' | null>(null);
 
+  // If user is not authenticated, show the public landing page as the default experience
   if (!isAuthenticated) {
-    return <AuthView />;
+    return (
+      <>
+        <LandingView
+          onOpenSignIn={() => setAuthModalMode('signin')}
+          onOpenSignUp={() => setAuthModalMode('signup')}
+        />
+        {authModalMode && (
+          <AuthView
+            initialMode={authModalMode}
+            onClose={() => setAuthModalMode(null)}
+          />
+        )}
+      </>
+    );
   }
 
   const renderActiveView = () => {
@@ -92,8 +108,8 @@ const MainLayout: React.FC = () => {
               onClick={() => setActiveTab(item.id)}
               className={`flex flex-col items-center gap-0.5 text-[10px] font-medium transition-colors ${
                 isActive
-                  ? 'text-[#55825D] dark:text-[#A8C9AE] font-bold'
-                  : 'text-[#858982] hover:text-[#292D2B] dark:hover:text-white'
+                  ? 'text-[#527D5D] dark:text-[#8DBA98] font-bold'
+                  : 'text-[#6B7269] hover:text-[#292D2B] dark:hover:text-white'
               }`}
             >
               <Icon className="w-4 h-4" />
@@ -119,4 +135,3 @@ export default function App() {
     </AppProvider>
   );
 }
-

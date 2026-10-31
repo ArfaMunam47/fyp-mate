@@ -232,7 +232,7 @@ export const DefenseSimulatorView: React.FC = () => {
             <button
               onClick={handleGenerateQuestion}
               disabled={isGeneratingQuestion}
-              className="w-full py-2.5 text-xs font-bold text-white dark:text-[#171A18] bg-[#96BD9D] hover:bg-[#83AA8A] dark:bg-[#A8C9AE] rounded-xl shadow-xs flex items-center justify-center gap-2 disabled:opacity-50 transition-colors"
+              className="w-full py-2.5 text-xs font-bold text-white bg-[#527D5D] hover:bg-[#43674D] dark:bg-[#8DBA98] dark:text-[#171A18] dark:hover:bg-[#7ba886] rounded-xl shadow-xs flex items-center justify-center gap-2 disabled:opacity-50 transition-colors cursor-pointer"
             >
               {isGeneratingQuestion ? (
                 <>
@@ -309,7 +309,7 @@ export const DefenseSimulatorView: React.FC = () => {
                 <button
                   type="submit"
                   disabled={!studentAnswer.trim() || isEvaluating}
-                  className="px-5 py-2.5 text-xs font-bold text-white dark:text-[#171A18] bg-[#96BD9D] hover:bg-[#83AA8A] dark:bg-[#A8C9AE] rounded-xl shadow-xs flex items-center justify-center gap-2 disabled:opacity-50 transition-colors shrink-0"
+                  className="px-5 py-2.5 text-xs font-bold text-white bg-[#527D5D] hover:bg-[#43674D] dark:bg-[#8DBA98] dark:text-[#171A18] dark:hover:bg-[#7ba886] rounded-xl shadow-xs flex items-center justify-center gap-2 disabled:opacity-50 transition-colors shrink-0 cursor-pointer"
                 >
                   {isEvaluating ? (
                     <>
