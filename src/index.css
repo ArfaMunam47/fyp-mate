@@ -1,0 +1,90 @@
+@import "tailwindcss";
+@custom-variant dark (&:where(.dark, .dark *));
+
+@theme {
+  --color-canvas: var(--color-canvas);
+  --color-card: var(--color-card);
+  --color-card-subtle: var(--color-card-subtle);
+  --color-border-subtle: var(--color-border-subtle);
+  --color-charcoal: var(--color-charcoal);
+  --color-muted-text: var(--color-muted-text);
+  
+  --color-sage: var(--color-sage);
+  --color-sage-soft: var(--color-sage-soft);
+  --color-pink: var(--color-pink);
+  --color-pink-soft: var(--color-pink-soft);
+  --color-mustard: var(--color-mustard);
+  --color-mustard-soft: var(--color-mustard-soft);
+  --color-sky: var(--color-sky);
+  --color-sky-soft: var(--color-sky-soft);
+}
+
+:root {
+  --color-canvas: #F7F6F0;
+  --color-card: #FFFFFF;
+  --color-card-subtle: #FAF9F5;
+  --color-border-subtle: rgba(41, 45, 43, 0.08);
+  --color-charcoal: #292D2B;
+  --color-muted-text: #858982;
+  
+  --color-sage: #96BD9D;
+  --color-sage-soft: #EEF5EF;
+  
+  --color-pink: #E0AEB8;
+  --color-pink-soft: #F9EDF0;
+  
+  --color-mustard: #E2BC57;
+  --color-mustard-soft: #FAF4E4;
+  
+  --color-sky: #8EC4DC;
+  --color-sky-soft: #EDF6FA;
+}
+
+.dark {
+  --color-canvas: #171A18;
+  --color-card: #202422;
+  --color-card-subtle: #272C29;
+  --color-border-subtle: rgba(247, 246, 240, 0.08);
+  --color-charcoal: #F2F1ED;
+  --color-muted-text: #9DA39B;
+  
+  --color-sage: #A8C9AE;
+  --color-sage-soft: #202E24;
+  
+  --color-pink: #EBC3CC;
+  --color-pink-soft: #332226;
+  
+  --color-mustard: #E9C76A;
+  --color-mustard-soft: #332C1A;
+  
+  --color-sky: #A9D4E8;
+  --color-sky-soft: #1C2C35;
+}
+
+@layer base {
+  body {
+    font-family: 'Plus Jakarta Sans', system-ui, -apple-system, sans-serif;
+    background-color: var(--color-canvas);
+    color: var(--color-charcoal);
+  }
+  
+  code, pre, kbd, samp {
+    font-family: 'JetBrains Mono', monospace;
+  }
+}
+
+/* Custom scrollbars for clean workspace panels */
+::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+::-webkit-scrollbar-thumb {
+  background: rgba(133, 137, 130, 0.3);
+  border-radius: 9999px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: rgba(133, 137, 130, 0.5);
+}

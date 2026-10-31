@@ -1,0 +1,6 @@
+{
+  "name": "FYP Mate — Academic Final Year Project Companion",
+  "description": "Student-first platform designed to simplify the entire Final Year Project journey for Computer Science and Software Engineering students.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}
